@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace CourseApp.Controllers
 {
-    public class HomeController : Controller //controller sınıfı 1.satırdaki namesapace içinde olduğundan buraya tanıtmak için 1.satırı ekliyoruz!
-    {
-        //yetenek kazandıracak methodlar(action method)
+    public class HomeController : Controller 
+    {        
         public string Index()
         {
             //localhost:44380/home/index
             return "Home/Index";
         }
-        public string List()
+        public string About()
         {
-            //localhost:44380/home/list
-            return "Home/List";
+            //localhost:44380/home/about
+            return "Home/About";
         }
     }
 }
