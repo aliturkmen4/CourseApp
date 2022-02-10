@@ -12,8 +12,14 @@ namespace CourseApp.Controllers
         //yetenek kazandıracak methodlar(action method)
         public IActionResult Index()
         {
-            //localhost:44380/home/index => course/index.cshtml
+            //localhost:44380/course/index => course/index.cshtml
             return View(); 
+        }
+
+        public IActionResult Apply()
+        {
+            //localhost:44380/course/apply
+            return View();
         }
 
         public IActionResult Details() 

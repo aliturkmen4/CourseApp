@@ -1,0 +1,37 @@
+﻿@model CourseApp.Models.Course
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" ,initial-scale="1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Apply</title>
+</head>
+<body>
+    <form action="/couse/apply">
+
+        <p>
+            <label for="name">Adınız</label>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label for="email">Eposta</label>
+            <input type="text" name="email" />
+        </p>
+        <p>
+            <label for="phone">Telefon</label>
+            <input type="text" name="phone" />
+        </p>
+        <p>
+            <label for="confirm">Kursa katılacak mısınız?</label>
+            <select name="confirm">
+                <option value="true">Evet,geliyorum</option>
+                <option value="false">Hayır,gelmiyorum</option>
+            </select>
+        </p>
+
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
