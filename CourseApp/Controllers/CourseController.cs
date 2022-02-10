@@ -18,10 +18,11 @@ namespace CourseApp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Apply(string Name, string Email, string Phone, bool Confirm) //görevi servera post etmek !
+        public IActionResult Apply(Student student) //görevi servera post etmek !
         {
+            Repository.AddStudent(student);
             //localhost:44380/course/apply methodu:POST 
-            return View();
+            return View("Thanks",student);
         }
 
         public IActionResult Details()
