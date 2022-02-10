@@ -1,9 +1,5 @@
 ﻿using CourseApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CourseApp.Controllers
 {
@@ -13,16 +9,22 @@ namespace CourseApp.Controllers
         public IActionResult Index()
         {
             //localhost:44380/course/index => course/index.cshtml
-            return View(); 
+            return View();
         }
-
+        [HttpGet] //bana bir kaynak getirdiği için!
         public IActionResult Apply()
         {
             //localhost:44380/course/apply
             return View();
         }
+        [HttpPost]
+        public IActionResult Apply(string Name, string Email, string Phone, bool Confirm) //görevi servera post etmek !
+        {
+            //localhost:44380/course/apply methodu:POST 
+            return View();
+        }
 
-        public IActionResult Details() 
+        public IActionResult Details()
         {
 
             var course = new Course();
