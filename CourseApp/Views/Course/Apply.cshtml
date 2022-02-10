@@ -7,32 +7,47 @@
     <meta name="viewport" content="width=device-width" ,initial-scale="1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Apply</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css"~ />
 </head>
 <body>
-    <form asp-action="apply">
-        <div asp-validation-summary="All"></div>
-        <p>
-            <label for="name">Adınız</label>
-            <input asp-for="Name" />
-        </p>
-        <p>
-            <label for="email">Eposta</label>
-            <input asp-for="Email" />
-        </p>
-        <p>
-            <label for="phone">Telefon</label>
-            <input asp-for="Phone" />
-        </p>
-        <p>
-            <label asp-for="Confirm">Kursa katılacak mısınız?</label>
-            <select asp-for="Confirm">
-                <option value="">Seçiniz</option>
-                <option value="true">Evet,geliyorum</option>
-                <option value="false">Hayır,gelmiyorum</option>
-            </select>
-        </p>
 
-        <input type="submit" value="Submit" />
-    </form>
+    <div class="container m-4">
+        <div class="card mx-auto" style="width:500px">
+            <div class="card-header">
+                Başvuru Formu
+            </div>
+            <div class="card-body">
+                <form asp-action="apply" method="post">
+                    <div asp-validation-summary="All"></div>
+                    <div class="form-group">
+                        <label for="name">Adınız</label>
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Eposta</label>
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input asp-for="Phone" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Confirm">Kursa katılacak mısınız?</label>
+                        <select asp-for="Confirm" class="form-control">
+                            <option value="">Seçiniz</option>
+                            <option value="true">Evet,geliyorum</option>
+                            <option value="false">Hayır,gelmiyorum</option>
+                        </select>
+                    </div>
+
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
