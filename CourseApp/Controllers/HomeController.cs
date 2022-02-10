@@ -8,15 +8,15 @@ namespace CourseApp.Controllers
 {
     public class HomeController : Controller 
     {        
-        public string Index()
+        public IActionResult Index()
         {
-            //localhost:44380/home/index
-            return "Home/Index";
+            //localhost:44380/home/index => home/index.cshtml
+            return View();
         }
-        public string About()
+        public IActionResult About()
         {
-            //localhost:44380/home/about
-            return "Home/About";
+            //localhost:44380/home/about =>home/about.cshtml
+            return View();
         }
     }
 }
