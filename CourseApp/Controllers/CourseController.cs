@@ -1,5 +1,6 @@
 ﻿using CourseApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace CourseApp.Controllers
 {
@@ -38,8 +39,10 @@ namespace CourseApp.Controllers
         }
         public IActionResult List()
         {
+            var students = Repository.Students.Where(i => i.Confirm == true);
             //localhost:44380/home/list => course/list.cshtml
-            return View();
+            return View(students);
         }
+
     }
 }
