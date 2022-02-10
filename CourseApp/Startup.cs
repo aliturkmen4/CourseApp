@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace CourseApp
 {
@@ -22,6 +24,9 @@ namespace CourseApp
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            app.UseStaticFiles(); //wwwroot klasörünü dýþarýya açar!
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
