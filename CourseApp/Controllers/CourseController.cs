@@ -1,6 +1,8 @@
 ﻿using CourseApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.Razor.TagHelpers;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CourseApp.Controllers
 {
@@ -21,9 +23,18 @@ namespace CourseApp.Controllers
         [HttpPost]
         public IActionResult Apply(Student student) //görevi servera post etmek !
         {
-            Repository.AddStudent(student);
-            //localhost:44380/course/apply methodu:POST 
-            return View("Thanks",student);
+            
+            if (ModelState.IsValid) //required alanlar sağlanıyor mu ?
+            {
+                Repository.AddStudent(student);
+                //localhost:44380/course/apply methodu:POST 
+                return View("Thanks", student);
+            }
+            else
+            {
+                return View(student);
+            }
+          
         }
 
         public IActionResult Details()

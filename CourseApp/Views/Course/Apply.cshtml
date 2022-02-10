@@ -1,5 +1,4 @@
-﻿@using CourseApp.Models
-@model Student
+﻿@model Student
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,23 +9,23 @@
     <title>Apply</title>
 </head>
 <body>
-    <form action="/course/apply" method="post">
-
+    <form asp-action="apply">
+        <div asp-validation-summary="All"></div>
         <p>
             <label for="name">Adınız</label>
-            <input type="text" name="name" />
+            <input asp-for="Name" />
         </p>
         <p>
             <label for="email">Eposta</label>
-            <input type="text" name="email" />
+            <input asp-for="Email" />
         </p>
         <p>
             <label for="phone">Telefon</label>
-            <input type="text" name="phone" />
+            <input asp-for="Phone" />
         </p>
         <p>
-            <label for="confirm">Kursa katılacak mısınız?</label>
-            <select name="confirm">
+            <label asp-for="Confirm">Kursa katılacak mısınız?</label>
+            <select asp-for="Confirm">
                 <option value="">Seçiniz</option>
                 <option value="true">Evet,geliyorum</option>
                 <option value="false">Hayır,gelmiyorum</option>
