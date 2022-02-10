@@ -10,6 +10,10 @@ namespace CourseApp.Controllers
     {        
         public IActionResult Index()
         {
+            int time = DateTime.Now.Hour;
+            ViewBag.Greeting = time > 12 ? "İyi günler" : "Günaydın";
+            ViewBag.UserName = "Ali";
+
             //localhost:44380/home/index => home/index.cshtml
             return View();
         }
