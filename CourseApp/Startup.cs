@@ -39,26 +39,26 @@ namespace CourseApp
             app.UseStaticFiles();
             //daha spesifik routelarý yukarý yaz!
             //ayaða kaldýrmak için (1.yöntem)
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    "CoursesByReleased",
-                    "courses/released/{year}/{month}",
-                    new { controller = "Course", action = "ByReleased" },
-                    new { year = @"\d{4}", month = @"\d{2}" } //yýl 4 haneli ay 2 haneli olacak dedim!
-                    ); 
-                routes.MapRoute(
-                name: "default",
-                template: "{controller}/{action}/{id?}");              
-            });
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        "CoursesByReleased",
+            //        "courses/released/{year}/{month}",
+            //        new { controller = "Course", action = "ByReleased" },
+            //        new { year = @"\d{4}", month = @"\d{2}" } //yýl 4 haneli ay 2 haneli olacak dedim!
+            //        ); 
+            //    routes.MapRoute(
+            //    name: "default",
+            //    template: "{controller}/{action}/{id?}");              
+            //});
 
             //2.yöntem
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //  name: "default",
-            //  pattern: "{controller=Course}/{action=Index}/{id?}"); //burada controller ismi verilip action verilmezse otomatik yukarýdaki patterndeki yere atar(home/index ile ayný yere).Eðer home/about dersem oraya gider.
-            //});
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+              name: "default",
+              pattern: "{controller=Course}/{action=Index}/{id?}"); //burada controller ismi verilip action verilmezse otomatik yukarýdaki patterndeki yere atar(home/index ile ayný yere).Eðer home/about dersem oraya gider.
+            });
 
 
 

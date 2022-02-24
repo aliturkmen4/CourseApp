@@ -11,6 +11,8 @@ namespace CourseApp.Controllers
         //yetenek kazandıracak methodlar(action method)
         public IActionResult Index()
         {
+            var kurs = new Course() { Id = 1, Name = "Komple Uygulamalı Web Geliştirme" };
+            ViewData["course"] = kurs;
             //localhost:44380/course/index => course/index.cshtml
             return View();
         }

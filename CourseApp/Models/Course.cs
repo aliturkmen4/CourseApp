@@ -12,5 +12,6 @@ namespace CourseApp.Models
         public string Description { get; set; }
 
         public bool isPublished { get; set; }
+        public int Id { get; set; }
     }
 }

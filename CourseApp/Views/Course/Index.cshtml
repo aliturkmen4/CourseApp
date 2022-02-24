@@ -1,8 +1,13 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@model CourseApp.Models.Course
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Course</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" ,initial-scale="1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Index</title>
 </head>
 <body>
-    course/index.cshtml
+    <h1>@(((Course)ViewData["course"]).Name) </h1>
 </body>
 </html>
