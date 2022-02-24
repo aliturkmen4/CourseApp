@@ -1,4 +1,7 @@
 ﻿@model CourseApp.ViewModels.CourseStudentsViewModel
+@{ 
+    var classname = Model.StudentResponses.Count > 2 ? "popular" : null;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +9,31 @@
     <meta name="viewport" content="width=device-width" ,initial-scale="1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Index</title>
+    <style>
+        .popular{
+            color:green;
+            font-weight:700;
+        }
+    </style>
 </head>
 <body>
-    <h1> @Model.Course.Name</h1>   
-    
-    <ul>
-        @foreach (var item in Model.StudentResponses)
-        {
-            <li>
-                @item.Name
-            </li>
-        }
-    </ul>
+    <h1 class="@classname"> @Model.Course.Name</h1>
+
+    @if (Model.StudentResponses.Count == 0)
+    {
+        <text>Kursa katılımcı yok. </text>
+    }
+    else
+    {
+        <ul>
+            @foreach (var item in Model.StudentResponses)
+            {
+                <li>
+                    @item.Name
+                </li>
+            }
+        </ul>
+    }
+
 </body>
 </html>

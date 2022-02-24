@@ -17,7 +17,9 @@ namespace CourseApp.Controllers
 
             var ogrenciler = new List<StudentResponse>() {
             new StudentResponse() { Name = "Ali" },
-            new StudentResponse() { Name = "Emin" }
+            new StudentResponse() { Name = "Emin" },
+            new StudentResponse(){Name="Deniz"},
+            new StudentResponse(){Name="Resul"}
             };
             ViewData["course"] = kurs;
             ViewBag.course = kurs;
