@@ -67,5 +67,10 @@ namespace CourseApp.Controllers
             return Content("pageindex= " + pageindex + "sortby= " + sortby);
         }
 
+        public ActionResult ByReleased(int year,int month)
+        {
+            return Content("year: " + year + "month: " + month);
+        }
+
     }
 }
