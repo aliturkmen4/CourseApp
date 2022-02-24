@@ -47,7 +47,7 @@ namespace CourseApp
             {
                 endpoints.MapControllerRoute(
               name: "default",
-              pattern: "{controller=Home}/{action=Index}/{id?}"); //burada controller ismi verilip action verilmezse otomatik yukarýdaki patterndeki yere atar(home/index ile ayný yere).Eðer home/about dersem oraya gider.
+              pattern: "{controller=Course}/{action=Index}/{id?}"); //burada controller ismi verilip action verilmezse otomatik yukarýdaki patterndeki yere atar(home/index ile ayný yere).Eðer home/about dersem oraya gider.
             });
         }
     }

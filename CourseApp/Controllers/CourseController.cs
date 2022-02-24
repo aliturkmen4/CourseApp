@@ -54,6 +54,18 @@ namespace CourseApp.Controllers
             //localhost:44380/home/list => course/list.cshtml
             return View(students);
         }
+        public ActionResult CourseList(int? pageindex,string sortby)
+        {
+            if (!pageindex.HasValue)
+            {
+                pageindex = 1;
+            }
+            if (string.IsNullOrWhiteSpace(sortby))
+            {
+                sortby = "name";
+            }
+            return Content("pageindex= " + pageindex + "sortby= " + sortby);
+        }
 
     }
 }
