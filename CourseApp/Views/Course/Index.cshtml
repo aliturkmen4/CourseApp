@@ -1,4 +1,4 @@
-﻿@model CourseApp.Models.Course
+﻿@model CourseApp.ViewModels.CourseStudentsViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +8,15 @@
     <title>Index</title>
 </head>
 <body>
-
-    <h2>@(((Course)ViewBag.course).Name)</h2>
-
-    <h1>@(((Course)ViewData["course"]).Name) </h1>
-
-    @Model.Name
+    <h1> @Model.Course.Name</h1>   
+    
+    <ul>
+        @foreach (var item in Model.StudentResponses)
+        {
+            <li>
+                @item.Name
+            </li>
+        }
+    </ul>
 </body>
 </html>

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Razor.TagHelpers;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
+using CourseApp.ViewModels;
 
 namespace CourseApp.Controllers
 {
@@ -12,10 +14,19 @@ namespace CourseApp.Controllers
         public IActionResult Index()
         {
             var kurs = new Course() { Id = 1, Name = "Komple Uygulamalı Web Geliştirme" };
+
+            var ogrenciler = new List<StudentResponse>() {
+            new StudentResponse() { Name = "Ali" },
+            new StudentResponse() { Name = "Emin" }
+            };
             ViewData["course"] = kurs;
             ViewBag.course = kurs;
             //localhost:44380/course/index => course/index.cshtml
-            return View();
+            var viewmodel = new CourseStudentsViewModel();
+
+            viewmodel.Course = kurs;
+            viewmodel.StudentResponses = ogrenciler;
+            return View(viewmodel);
         }
         [HttpGet] //bana bir kaynak getirdiği için!
         public IActionResult Apply()
